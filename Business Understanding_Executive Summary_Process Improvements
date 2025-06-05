@@ -1,0 +1,26 @@
+Business Understanding, Executive Summary, 
+
+Business Understanding:
+The current loan approval process is done manually by individuals at FinTech. This leads to slower response time to loan applicants and can also lead to inconsistent decisions due to different individuals reviewing loans. 
+Each inappropriate loan given, or not given, leads to money lost by FinTech. If a loan is declined for someone who was credit worth and should have been approved, FinTech profit is down by 8k. 
+If a loan is approved for an applicant who should have been denied, the average loss is 50k. This makes the CFO and other officials in the company key stakeholders as it directly impacts the profit and/or loss of the company. 
+Also the loan approvers are key stakeholders as they will be using the model to make final decisions on loans and be communicating with the customers.
+
+
+There are different types of model errors which can be useful in these scenarios. Recall will allow for more false negatives. Meaning that you will be able to get more customers approved, adding 8K to the profit. 
+Precision focuses on false positives. So precision is important to minimize the number of false positives, meaning it'll minimize the number of 50k loss the company takes. 
+Accuracy takes into account both false positives and false negatives and tries to make the model as accurate as possible as the name would describe. 
+F1-score is the score that finds the balance between precision and recall. Given the impact of approving bad loans, precision would be more important in this scenario as it leads to a bigger loss by the company.  
+And you want to find a good balance with Recall as you don't want to miss too many loans which should have been approved.
+
+
+The model choice between categorical (approved, denied) and regressional (risk score) is a business decision. Whether you would want the final say to be by the model making it more consistent, but also could miss info not present in the data. 
+Or would you want the final decision to be by an employee who reviews the risk score and makes final decision. Both approches would suffice.  
+But since the goal is to standardize loan approval process, rather than having an employee make the final decision, a classification model would fit best for complete standardization in the scenario.
+
+
+
+
+
+Executive Summary:
+
