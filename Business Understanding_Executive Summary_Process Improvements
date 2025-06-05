@@ -23,4 +23,29 @@ But since the goal is to standardize loan approval process, rather than having a
 
 
 Executive Summary:
+In summary, we found to standardize loan approval it is best to create a model that most accurately predicts whether a customer should be approved or not.  
+Every model will have variance, and if we are predicting risk scores for individual customers, it still becomes a manual job in the end and due to user input of final approval could still lead to more missed data.
+With this being said, the best model we found was a Logistical Regression model which take the input from the data file and predicts whether the customer should be approved or denied for a loan.
 
+We tested many models (Logistic Regression, Support Vector, XGBoost, Random Forest) with various metrics (Accuracy, Precision, Recall, F1-Score, custom score) in order to determine which model would fit the best.
+Some models clearly performed better than others, while others were both pretty equal in outcome.  What we found was that Logistical Regression using a custom made scoring technique worked the best.
+Our custom score was made by weighting precision and recall together.  80% weight was given to precision, and 20% was given to recall.  We found the 80/20 split worked the best after testing multiple options. 
+We weight more on precision, since approving loans that should have been declined have a higher (50k) impact on the business, rather than missing loans that should have been approved (8k missed).
+
+The model performs well on the data given. Here are the performance metrics of the model using an 80% training, 20% testing split.
+Accuracy: 96.23%
+Precision: 93.83%
+Recall: 91.15%
+F1-score: 92.47%
+
+Using the 80% training, 20% testing split, the model predicted on the test data that the company would have still lost some money since it is not 100% accurate.  The money lost is below:
+Inaccurate Approvals: 61 loans @ $50k = $3,050,000
+Missed Approvals: 90 loans @ $8k = $720,000
+Total Money Lost: $3,770,000
+
+The model on the test data has about a 5% inaccuracy rate.
+
+
+Potential Improvements:
+- Some of the data in the file was missing and we used the median value for that column, which could have lead to some misinterpretations.  Having consistent and accurate data would help this process.
+- 
